@@ -3,6 +3,7 @@
 
 <head>
     @include('dashboard.layout.head')
+    @stack('styles')
 </head>
 
 <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
@@ -26,7 +27,9 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h1 class="page-header-title">Dashboard</h1>
+                        <h1 class="page-header-title">
+                            @yield('title')
+                        </h1>
                     </div>
                     <!-- End Col -->
                 </div>
@@ -53,6 +56,7 @@
 
 
     @include('dashboard.layout.scripts')
+    @stack('scripts')
 </body>
 
 </html>

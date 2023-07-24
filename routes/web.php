@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CitiesController;
+use App\Http\Controllers\Dashboard\CountryController;
+use App\Http\Controllers\Dashboard\HotelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.index');
+    return view('welcome');
+});
+
+
+
+// =====================================
+// ============= Dashboard =============
+// =====================================
+Route::prefix("dashboard-panel")->name("dashboard.")->group(function () {
+    //
+    Route::get('/', function () {
+        return view('dashboard.index');
+    })->name("index");
+
+    // =====================================
+    // ============= Contries =============
+    // =====================================
+    Route::resource("countries", CountryController::class);
+
+    // =====================================
+    // ============= Cities =============
+    // =====================================
+    Route::resource("cities", CitiesController::class);
+
+
+
+    // =====================================
+    // ============= Hotels =============
+    // =====================================
+    Route::resource("hotels", HotelController::class);
 });

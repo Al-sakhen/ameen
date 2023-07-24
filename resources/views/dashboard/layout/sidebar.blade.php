@@ -42,20 +42,50 @@ class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical nav
 
                 </div>
                 <div id="navbarVerticalMenuPagesMenu">
+                    <div class="nav-item">
+                        <a class="nav-link dropdown-toggle " href="#countriesNav"
+                            role="button" data-bs-toggle="collapse"
+                            data-bs-target="#countriesNav" aria-expanded="false"
+                            aria-controls="countriesNav">
+                            <i class="bi-people nav-icon"></i>
+                            <span class="nav-link-title">Countries</span>
+                        </a>
+
+                        <div id="countriesNav" class="nav-collapse collapse "
+                            data-bs-parent="#navbarVerticalMenuPagesMenu">
+                            <a class="nav-link " href="{{ route('dashboard.countries.index') }}">Overview</a>
+                            <a class="nav-link " href="{{ route('dashboard.countries.create') }}">Create</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link dropdown-toggle " href="#citiesNav"
+                            role="button" data-bs-toggle="collapse"
+                            data-bs-target="#citiesNav" aria-expanded="false"
+                            aria-controls="citiesNav">
+                            <i class="bi-people nav-icon"></i>
+                            <span class="nav-link-title">Cities</span>
+                        </a>
+
+                        <div id="citiesNav" class="nav-collapse collapse "
+                            data-bs-parent="#navbarVerticalMenuPagesMenu">
+                            <a class="nav-link " href="{{ route('dashboard.cities.index') }}">Overview</a>
+                            <a class="nav-link " href="{{ route('dashboard.cities.create') }}">Create</a>
+                        </div>
+                    </div>
                     <!-- Collapse -->
                     <div class="nav-item">
-                        <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesUsersMenu"
+                        <a class="nav-link dropdown-toggle " href="#hotelsNav"
                             role="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarVerticalMenuPagesUsersMenu" aria-expanded="false"
-                            aria-controls="navbarVerticalMenuPagesUsersMenu">
+                            data-bs-target="#hotelsNav" aria-expanded="false"
+                            aria-controls="hotelsNav">
                             <i class="bi-people nav-icon"></i>
                             <span class="nav-link-title">Hotels</span>
                         </a>
 
-                        <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse "
+                        <div id="hotelsNav" class="nav-collapse collapse "
                             data-bs-parent="#navbarVerticalMenuPagesMenu">
-                            <a class="nav-link " href="users.html">Overview</a>
-                            <a class="nav-link " href="users-leaderboard.html">Create</a>
+                            <a class="nav-link " href="{{ route('dashboard.hotels.index') }}">Overview</a>
+                            <a class="nav-link " href="{{ route('dashboard.hotels.create') }}">Create</a>
                         </div>
                     </div>
                     <!-- End Collapse -->
